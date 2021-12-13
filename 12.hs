@@ -11,5 +11,5 @@ paths seen m =  concat [paths (a:seen) m
     || elem a seen && a /= "start"  && (nub . filter (all isLower)) seen == filter (all isLower) seen -- remove this line for p1
     || notElem a seen] 
 
-main = readFile "12/input.txt" >>= print . length . paths ["start"] . foldl toMap M.empty . map split . lines
+main = readFile "12.txt" >>= print . length . paths ["start"] . foldl toMap M.empty . map split . lines
     
