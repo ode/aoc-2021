@@ -11,5 +11,5 @@ valid = any (\(x, y) -> xmin <= x && x <= xmax && ymin <= y && y <= ymax)
 allTrajectories = filter valid [trajectory vx vy | vx <- [1..xmax], vy <- [ymin.. -ymin]]
 
 main = do
-    print $ maximum . map snd . concat $ allTrajectories
+    print . f $ -ymin
     print $ length allTrajectories
